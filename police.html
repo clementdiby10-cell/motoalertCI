@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>MotoAlert – Contrôle Police</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body { font-family: Arial; background:#f4f6f9; padding:20px }
+.card { background:#fff; padding:20px; border-radius:8px }
+button { width:100%; padding:12px; background:#dc3545; color:#fff; border:none }
+</style>
+</head>
+
+<body>
+<div class="card">
+<h2>🚔 Contrôle Moto – Police</h2>
+<p>Numéro de châssis :</p>
+<input type="text" id="chassis">
+<button onclick="checkMoto()">Contrôler</button>
+<p id="result"></p>
+</div>
+
+<script>
+function checkMoto() {
+  var chassis = document.getElementById("chassis").value;
+  fetch("https://script.google.com/macros/s/AKfycbwEtzBBtY1BoYz4LryYA1MhwLkTJlOLyYJzq-W8DQ5wQNifB4N-CPlPdavSRljoPp-D/exec?chassis=" + chassis)
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("result").innerHTML =
+        data.status === "FOUND"
+        ? "🚨 MOTO SIGNALÉE VOLÉE"
+        : "✅ RAS";
+    });
+}
+</script>
+</body>
+</html>
