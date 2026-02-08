@@ -115,8 +115,7 @@
     <h2>🔍 Vérifier une moto</h2>
     <p>Entrez le <strong>numéro de châssis</strong> pour savoir si une moto a été déclarée volée.</p>
 
-    <input type="text" placeholder="Ex : LTYJX2G45M0123456">
-    <button><input type="text" id="chassis" placeholder="Numéro de châssis">
+    <input type="text" id="chassis" placeholder="Numéro de châssis">
 <button onclick="checkMoto()">Vérifier</button>
 <p id="result"></p>
 
@@ -138,7 +137,6 @@ function checkMoto() {
     });
 }
 </script>
-</button>
 
     <p class="info">
       ⚠️ La vérification automatique sera activée après connexion complète à la base MotoAlert.
