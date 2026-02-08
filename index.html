@@ -125,7 +125,7 @@ function checkMoto() {
   var chassis = document.getElementById("chassis").value;
   var result = document.getElementById("result");
 
-  fetch("COLLE_ICI_TON_URL_APPS_SCRIPT?chassis=" + chassis)
+  fetch("https://script.google.com/macros/s/AKfycbwEtzBBtY1BoYz4LryYA1MhwLkTJlOLyYJzq-W8DQ5wQNifB4N-CPlPdavSRljoPp-D/exec?chassis=" + chassis)
     .then(res => res.json())
     .then(data => {
       if (data.status === "FOUND") {
